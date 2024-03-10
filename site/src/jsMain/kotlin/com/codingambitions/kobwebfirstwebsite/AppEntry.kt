@@ -20,9 +20,11 @@ private const val COLOR_MODE_KEY = "kobwebfirstwebsite:colorMode"
 
 @InitSilk
 fun initColorMode(ctx: InitSilkContext) {
-    ctx.config.initialColorMode = localStorage.getItem(COLOR_MODE_KEY)?.let { ColorMode.valueOf(it) } ?: ColorMode.DARK
+    ctx.config.initialColorMode = localStorage.getItem(COLOR_MODE_KEY)?.let { ColorMode.valueOf(it) } ?: ColorMode.LIGHT
 }
 
+
+//Custom root
 @App
 @Composable
 fun AppEntry(content: @Composable () -> Unit) {
