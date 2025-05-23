@@ -1,14 +1,14 @@
 site:
-  title: "Kobwebfirstwebsite"
+  title: "kobwebwebsite"
 
 server:
   files:
     dev:
       contentRoot: "build/processedResources/js/main/public"
-      script: "build/dist/js/developmentExecutable/kobwebfirstwebsite.js"
+      script: "build/kotlin-webpack/js/developmentExecutable/kobwebfirstwebsite.js"
       api: "build/libs/kobwebfirstwebsite.jar"
     prod:
-      script: "build/dist/js/productionExecutable/kobwebfirstwebsite.js"
+      script: "build/kotlin-webpack/js/productionExecutable/kobwebfirstwebsite.js"
       siteRoot: ".kobweb/site"
 
   port: 8080

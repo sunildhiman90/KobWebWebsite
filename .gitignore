@@ -25,3 +25,5 @@ kotlin-js-store
 # Gradle ignores
 .gradle
 
+/.kotlin/
+/.idea/AndroidProjectSystem.xml
