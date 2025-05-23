@@ -19,11 +19,10 @@ import com.varabyte.kobweb.silk.components.forms.Input
 import com.varabyte.kobweb.silk.components.forms.Label
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.navigation.Link
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.hover
-import com.varabyte.kobweb.silk.components.style.toAttrs
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.toAttrs
+import com.varabyte.kobweb.silk.style.toModifier
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.web.attributes.ButtonType
@@ -37,13 +36,13 @@ import org.jetbrains.compose.web.dom.Text
 //Route creation
 // AboutUs -> about-us
 
-val FormStyle by ComponentStyle {
+val FormStyle = CssStyle {
     base {
         Modifier.border(3.px, LineStyle.Solid, Color.lightgray)
     }
 }
 
-val ButtonStyle by ComponentStyle {
+val ButtonStyle = CssStyle {
     base {
         Modifier.backgroundColor(Color.blue)
             .color(Color.white)
@@ -54,14 +53,14 @@ val ButtonStyle by ComponentStyle {
     }
 }
 
-val H2Style by ComponentStyle {
+val H2Style = CssStyle {
     base {
         Modifier.textAlign(TextAlign.Center)
     }
 }
 
 
-val AvatarStyle by ComponentStyle {
+val AvatarStyle = CssStyle {
     base {
         Modifier
             .width(40.percent)
@@ -70,7 +69,7 @@ val AvatarStyle by ComponentStyle {
     }
 }
 
-val InputStyle by ComponentStyle {
+val InputStyle = CssStyle {
     base {
         Modifier
             .width(100.percent)
@@ -81,7 +80,7 @@ val InputStyle by ComponentStyle {
     }
 }
 
-val MainContainerStyle by ComponentStyle {
+val MainContainerStyle = CssStyle {
     base {
         Modifier
             .fontFamily("Arial", "Helvetica")
@@ -92,7 +91,7 @@ val MainContainerStyle by ComponentStyle {
     }
 }
 
-val TopContainerStyle by ComponentStyle {
+val TopContainerStyle = CssStyle {
     base {
         Modifier
             .fillMaxWidth()
@@ -141,7 +140,7 @@ fun Login() {
                                 modifier = InputStyle.toModifier(),
                                 type = InputType.Text,
                                 placeholder = "Enter Username",
-                                onValueChanged = {
+                                onValueChange = {
                                     username = it
                                 })
                         }
@@ -153,7 +152,7 @@ fun Login() {
                                 value = password,
                                 type = InputType.Password,
                                 placeholder = "Enter Password",
-                                onValueChanged = {
+                                onValueChange = {
                                     password = it
                                 })
                         }

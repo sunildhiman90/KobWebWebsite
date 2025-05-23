@@ -1,4 +1,3 @@
-import com.varabyte.kobweb.gradle.application.extensions.AppBlock.LegacyRouteRedirectStrategy
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 
 plugins {
@@ -6,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.kobweb.application)
     alias(libs.plugins.kobwebx.markdown)
+    alias(libs.plugins.compose.compiler)
 }
 
 group = "com.codingambitions.kobwebfirstwebsite"
@@ -17,9 +17,9 @@ kobweb {
             description.set("Powered by Kobweb")
         }
 
-        // Only legacy sites need this set. Sites built after 0.16.0 should default to DISALLOW.
-        // See https://github.com/varabyte/kobweb#legacy-routes for more information.
-        legacyRouteRedirectStrategy.set(LegacyRouteRedirectStrategy.DISALLOW)
+//        // Only legacy sites need this set. Sites built after 0.16.0 should default to DISALLOW.
+//        // See https://github.com/varabyte/kobweb#legacy-routes for more information.
+//        legacyRouteRedirectStrategy.set(LegacyRouteRedirectStrategy.DISALLOW)
     }
 }
 
@@ -30,11 +30,11 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
+            implementation(libs.compose.runtime)
         }
 
         jsMain.dependencies {
-            implementation(compose.html.core)
+            implementation(libs.compose.html.core)
             implementation(libs.kobweb.core)
             implementation(libs.kobweb.silk)
             // This default template uses built-in SVG icons, but what's available is limited.
